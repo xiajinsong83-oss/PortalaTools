@@ -1,0 +1,125 @@
+nav_all_tools = "Все инструменты"
+
+nav_home = "Главная"
+
+hero_eyebrow = "Бесплатные онлайн-инструменты · {Count}"
+
+hero_part1 = "Бесплатные онлайн-инструменты, "
+
+hero_accent = "всё локально в браузере"
+
+search_placeholder = "Что вы ищете? Попробуйте: JSON, Base64, QR…"
+
+search_button = "Найти"
+
+trust_free = "100% бесплатно"
+
+trust_signup = "Без регистрации"
+
+trust_open = "Готово к работе"
+
+trust_upload = "Без загрузки данных"
+
+popular_label = "Популярные"
+
+tool_count = "инструментов"
+
+howto_title = "Как использовать"
+
+howto_step1 = "Откройте инструмент выше и вставьте ваш контент."
+
+howto_step2 = "Нажмите «Выполнить» — результат появится мгновенно."
+
+howto_step3 = "Скопируйте результат. Всё работает локально в браузере."
+
+faq_title = "Частые вопросы"
+
+faq_q1 = "Этот инструмент отправляет мои данные на сервер?"
+
+faq_a1 = "Нет. Вся обработка происходит локально в вашем браузере. Ничего не загружается, не хранится и не передаётся."
+
+faq_q2 = "Это бесплатно? Нужна регистрация?"
+
+faq_a2 = "Да, полностью бесплатно, без регистрации и ограничений."
+
+faq_q3 = "Работает на телефоне?"
+
+faq_a3 = "Да. Работает в любом современном браузере: на десктопе, планшете и телефоне."
+
+related_title = "Похожие инструменты"
+
+footer_privacy = "Конфиденциальность"
+
+footer_terms = "Условия"
+
+footer_dmca = "DMCA"
+
+footer_about = "О нас"
+
+footer_contact = "Контакты"
+
+footer_stats_title = "Статистика"
+
+stat_tools = "инструментов"
+
+stat_cats = "категорий"
+
+stat_local = "100% локально"
+
+ad_label = "Реклама"
+
+privacy_note = "Вся обработка локальна в вашем браузере. Данные не отправляются на сервер."
+
+site_tagline = "Бесплатные онлайн-инструменты — локально в браузере"
+
+cat_files_name = "Файлы"
+
+cat_files_desc = ""
+
+cat_text_name = "Текст"
+
+cat_text_desc = ""
+
+cat_random_name = "Случайно"
+
+cat_random_desc = ""
+
+cat_time_name = "Время"
+
+cat_time_desc = ""
+
+cat_dev_name = "Разработка"
+
+cat_dev_desc = ""
+
+cat_device_name = "Устройства"
+
+cat_device_desc = ""
+
+cat_study_name = "Учёба"
+
+cat_study_desc = ""
+
+cat_health_name = "Здоровье"
+
+cat_health_desc = ""
+
+cat_office_name = "Офис"
+
+cat_office_desc = ""
+
+cat_fun_name = "Развлечения"
+
+cat_fun_desc = ""
+
+cat_social_name = "Соцсети"
+
+cat_social_desc = ""
+
+cat_secure_name = "Безопасность"
+
+cat_secure_desc = ""
+
+cat_query_name = "Быт"
+
+cat_query_desc = ""

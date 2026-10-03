@@ -1,0 +1,16 @@
+{{- $items := slice -}}
+{{- range .Params -}}
+  {{- with site.GetPage (printf "/tools/%s" .) -}}
+    {{- $items = $items | append (dict "title" .Title "url" .RelPermalink) -}}
+  {{- end -}}
+{{- end -}}
+{{- if $items -}}
+<aside class="related-tools">
+  <h2>{{ i18n "related_tools" }}</h2>
+  <ul>
+    {{- range $items }}
+    <li><a href="{{ .url }}">{{ .title }}</a></li>
+    {{- end }}
+  </ul>
+</aside>
+{{- end -}}

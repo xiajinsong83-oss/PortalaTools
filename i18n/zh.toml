@@ -1,0 +1,99 @@
+# ============================================================
+# 简体中文界面文案 — Portala 工具箱
+# ============================================================
+
+# 顶部导航
+nav_all_tools = "全部工具"
+nav_open_menu = "菜单"
+
+# 首屏
+hero_eyebrow = "✦ 免费在线工具箱 · 已上线 {{ .Count }} 个工具"
+hero_part1 = "生活小工具，"
+hero_accent = "打开就用"
+hero_subtitle = "{{ .Count }}+ 个隐私优先工具：数据不上传、不存储、无需注册。"
+search_placeholder = "想用什么？搜搜看：解压、转盘、二维码…"
+search_button = "搜索"
+
+# 信任徽章
+trust_free = "完全免费"
+trust_signup = "无需注册"
+trust_open = "打开即用"
+trust_upload = "数据不上传"
+
+# 常用条
+popular_label = "大家常用"
+
+# 工具数量后缀
+tool_count = "个工具"
+view_all = "查看全部"
+
+# 13 大分类（照抄 deertools.cn）
+cat_files_name = "文件处理"
+cat_files_desc = "解压压缩、Excel/CSV/JSON 互转、编码哈希、二维码"
+cat_text_name = "文本处理"
+cat_text_desc = "字数统计、去重排序、简繁拼音、文本对比"
+cat_random_name = "随机决策"
+cat_random_desc = "转盘抽签、掷骰子、随机点名、分组抽奖"
+cat_time_name = "时间日期"
+cat_time_desc = "倒计时、秒表、番茄钟、全屏时钟、万年历"
+cat_dev_name = "开发者工具"
+cat_dev_desc = "时间戳、正则、UUID、格式化、CSS 生成器"
+cat_device_name = "设备检测"
+cat_device_desc = "屏幕坏点、键盘鼠标、摄像头麦克风测试"
+cat_study_name = "教育学习"
+cat_study_desc = "打字练习、口诀表、字帖生成、舒尔特方格"
+cat_health_name = "健康生活"
+cat_health_desc = "视力色盲测试、白噪音、呼吸练习、提醒器"
+cat_office_name = "写作办公"
+cat_office_desc = "周报模板、提词器、待办看板"
+cat_fun_name = "娱乐生成器"
+cat_fun_desc = "网名情话、藏头诗、今日运势、答案之书"
+cat_social_name = "社交媒体"
+cat_social_desc = "小红书排版、手持弹幕、直播抽奖、应援牌"
+cat_secure_name = "加密安全"
+cat_secure_desc = "密码生成、强度检测、文本加密"
+cat_query_name = "生活查询"
+cat_query_desc = "垃圾分类、归属地、尺码对照、亲戚称呼"
+
+# 广告
+ad_label = "Advertisement"
+
+# 隐私声明（工具页）
+privacy_note = "所有处理均在浏览器本地完成。数据不会上传到我们的服务器，也不会被存储。"
+
+# 相关工具
+related_tools = "相关工具"
+
+# 页脚
+footer_privacy = "隐私政策"
+footer_terms = "服务条款"
+footer_dmca = "DMCA"
+footer_about = "关于我们"
+footer_contact = "联系我们"
+footer_email = "联系邮箱"
+footer_stats_title = "站点数据"
+footer_stats_label = "全站统计 · 每日更新"
+stat_tools = "在线工具"
+stat_cats = "大分类"
+stat_local = "本地运行"
+footer_privacy_note = "所有工具均在浏览器本地运行。我们不会上传、存储或分享你的任何数据。"
+footer_copyright_suffix = "版权所有"
+footer_tip = "建议使用最新版 Chrome、Edge、Firefox 或 Safari，以获得最佳体验。"
+
+# Cookie 横幅
+cookie_banner = "我们使用 Cookie 来保证网站正常运行，并用于展示相关广告（Google AdSense）。必要 Cookie 始终开启，广告 Cookie 仅在获得你的同意后才会启用。我们自身不会收集或存储任何个人数据。"
+cookie_accept = "同意"
+site_tagline = "免费在线工具箱 — 生活常用小工具大全"
+nav_home = "首页"
+howto_title = "如何使用"
+howto_step1 = "在上方工具区域粘贴或拖入你的内容 / 文件。"
+howto_step2 = "点击「运行 / 生成」按钮，结果会即时显示在输出区域。"
+howto_step3 = "复制结果或下载文件。所有处理均在浏览器本地完成。"
+faq_title = "常见问题"
+faq_q1 = "这个工具会把我的数据上传到服务器吗？"
+faq_a1 = "不会。所有处理都在你的浏览器本地完成，不会上传、存储或分享任何数据。关闭页面即全部清除。"
+faq_q2 = "这个工具免费吗？需要注册吗？"
+faq_a2 = "完全免费，无需注册，没有使用次数限制，也没有水印。"
+faq_q3 = "手机上能用吗？"
+faq_a3 = "可以。在任何现代浏览器（手机、平板、电脑）上都能正常使用。"
+related_title = "相关工具"

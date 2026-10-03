@@ -1,0 +1,125 @@
+nav_all_tools = "すべてのツール"
+
+nav_home = "ホーム"
+
+hero_eyebrow = "無料オンラインツール · {Count}個"
+
+hero_part1 = "無料オンラインツール、"
+
+hero_accent = "すべてブラウザ内で完結"
+
+search_placeholder = "何を探していますか？: JSON, Base64, QR…"
+
+search_button = "検索"
+
+trust_free = "完全無料"
+
+trust_signup = "登録不要"
+
+trust_open = "すぐ使える"
+
+trust_upload = "データ送信なし"
+
+popular_label = "人気"
+
+tool_count = "ツール"
+
+howto_title = "使い方"
+
+howto_step1 = "上のツールにコンテンツを貼り付けまたはドラッグ＆ドロップします。"
+
+howto_step2 = "「実行」をクリックすると結果がすぐに表示されます。"
+
+howto_step3 = "結果をコピー。すべてブラウザ内でローカルに実行されます。"
+
+faq_title = "よくある質問"
+
+faq_q1 = "このツールはデータをサーバーに送信しますか？"
+
+faq_a1 = "いいえ。すべての処理はブラウザ内でローカルに行われます。アップロード、保存、共有は一切ありません。"
+
+faq_q2 = "無料ですか？登録は必要ですか？"
+
+faq_a2 = "はい、完全無料で登録も不要、利用制限もありません。"
+
+faq_q3 = "スマホで使えますか？"
+
+faq_a3 = "はい。モダンブラウザならデスクトップ、タブレット、スマホで動作します。"
+
+related_title = "関連ツール"
+
+footer_privacy = "プライバシー"
+
+footer_terms = "利用規約"
+
+footer_dmca = "DMCA"
+
+footer_about = "概要"
+
+footer_contact = "お問い合わせ"
+
+footer_stats_title = "サイド統計"
+
+stat_tools = "ツール"
+
+stat_cats = "カテゴリ"
+
+stat_local = "100%ローカル"
+
+ad_label = "広告"
+
+privacy_note = "すべてブラウザ内でローカルに処理され、サーバーへの送信はありません。"
+
+site_tagline = "無料オンラインツール — ブラウザでローカル実行"
+
+cat_files_name = "ファイル"
+
+cat_files_desc = ""
+
+cat_text_name = "テキスト"
+
+cat_text_desc = ""
+
+cat_random_name = "ランダム"
+
+cat_random_desc = ""
+
+cat_time_name = "日時"
+
+cat_time_desc = ""
+
+cat_dev_name = "開発"
+
+cat_dev_desc = ""
+
+cat_device_name = "デバイス"
+
+cat_device_desc = ""
+
+cat_study_name = "学習"
+
+cat_study_desc = ""
+
+cat_health_name = "健康"
+
+cat_health_desc = ""
+
+cat_office_name = "オフィス"
+
+cat_office_desc = ""
+
+cat_fun_name = "エンタメ"
+
+cat_fun_desc = ""
+
+cat_social_name = "SNS"
+
+cat_social_desc = ""
+
+cat_secure_name = "セキュリティ"
+
+cat_secure_desc = ""
+
+cat_query_name = "生活"
+
+cat_query_desc = ""

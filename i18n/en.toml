@@ -1,0 +1,99 @@
+# ============================================================
+# English UI strings — Portala Tools
+# ============================================================
+
+# Header / nav
+nav_all_tools = "All Tools"
+nav_open_menu = "Menu"
+
+# Hero
+hero_eyebrow = "✦ Free online toolbox · {{ .Count }} tools online"
+hero_part1 = "Everyday online tools, "
+hero_accent = "open and use"
+hero_subtitle = "{{ .Count }}+ privacy-first tools: no uploads, no storage, no signup."
+search_placeholder = "What do you need? Try: wheel, unzip, QR code…"
+search_button = "Search"
+
+# Trust badges
+trust_free = "100% Free"
+trust_signup = "No Signup"
+trust_open = "Open & Use"
+trust_upload = "No Data Upload"
+
+# Popular bar
+popular_label = "Popular"
+
+# Tool count
+tool_count = "tools"
+view_all = "View all"
+
+# 13 categories (deertools taxonomy)
+cat_files_name = "File Tools"
+cat_files_desc = "Zip / rar / tar archives, Excel / CSV / JSON conversion"
+cat_text_name = "Text Tools"
+cat_text_desc = "Word count, dedupe, find & replace, text cleanup"
+cat_random_name = "Random & Decisions"
+cat_random_desc = "Wheel, dice, name picker, team splits"
+cat_time_name = "Time & Date"
+cat_time_desc = "Countdown, stopwatch, pomodoro, clocks, world clock"
+cat_dev_name = "Developer Tools"
+cat_dev_desc = "Timestamp, regex, UUID, JSON / SQL / CSS formatters"
+cat_device_name = "Device Tests"
+cat_device_desc = "Dead pixels, refresh rate, keyboard, mouse, speakers"
+cat_study_name = "Education"
+cat_study_desc = "Typing speed, multiplication tables, practice grids"
+cat_health_name = "Health & Lifestyle"
+cat_health_desc = "Vision & color tests, breathing, focus sounds"
+cat_office_name = "Writing & Office"
+cat_office_desc = "Weekly report, teleprompter"
+cat_fun_name = "Fun & Generators"
+cat_fun_desc = "Nicknames, pickup lines, fortunes, game IDs"
+cat_social_name = "Social Media"
+cat_social_desc = "Note layout, LED ticker, barrage, emoji"
+cat_secure_name = "Security"
+cat_secure_desc = "Password generator, strength check"
+cat_query_name = "Daily Queries"
+cat_query_desc = "Garbage sorting, zodiac, kinship calculator"
+
+# Advertisement
+ad_label = "Advertisement"
+
+# Privacy note (tool pages)
+privacy_note = "All processing happens locally inside your browser. No data is uploaded to our server, nothing is stored."
+
+# Related tools
+related_tools = "Related Tools"
+
+# Footer
+footer_privacy = "Privacy Policy"
+footer_terms = "Terms of Service"
+footer_dmca = "DMCA"
+footer_about = "About Us"
+footer_contact = "Contact Us"
+footer_email = "Contact Email"
+footer_stats_title = "Site Stats"
+footer_stats_label = "Site-wide · updated daily"
+stat_tools = "Online Tools"
+stat_cats = "Categories"
+stat_local = "Runs 100% Locally"
+footer_privacy_note = "All tools run 100% locally in your browser. We never upload, store or share your data."
+footer_copyright_suffix = "All rights reserved."
+footer_tip = "Recommended: latest Chrome, Edge, Firefox or Safari for the best experience."
+
+# Cookie banner
+cookie_banner = "We use cookies to make our site work and to serve relevant advertising (Google AdSense). Essential cookies are always on; advertising cookies are only placed with your consent. We never collect or store personal data ourselves."
+cookie_accept = "Accept"
+site_tagline = "Free Online Web Tools — Run Locally in Your Browser"
+nav_home = "Home"
+howto_title = "How to use this tool"
+howto_step1 = "Open the tool above and paste or drag your content / file into the input area."
+howto_step2 = "Click the Run / Generate button — the result appears instantly in the output area."
+howto_step3 = "Copy the result or download the file. Everything runs locally in your browser."
+faq_title = "Frequently asked questions"
+faq_q1 = "Does this tool upload my data to a server?"
+faq_a1 = "No. All processing happens locally in your browser. Nothing is uploaded, stored, or shared. Close the page and everything is gone."
+faq_q2 = "Is this tool free? Do I need to register?"
+faq_a2 = "Yes, it's completely free with no registration, no ads blockers, and no usage limits."
+faq_q3 = "Does it work on mobile?"
+faq_a3 = "Yes. The tool works on any modern browser — desktop, tablet, and mobile."
+related_title = "Related Tools"

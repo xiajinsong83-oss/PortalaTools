@@ -1,0 +1,56 @@
+{{- /* ============================================================
+   /tools/ list page — every tool grouped by category (deertools style)
+============================================================ */ -}}
+{{- define "main" }}
+{{- $cats := site.Data.categories.cat -}}
+{{- $toolPages := where site.RegularPages "Section" "tools" -}}
+{{- $meta := site.Data.toolmeta -}}
+
+{{- /* Group tools by category id */ -}}
+{{- $grouped := dict -}}
+{{- range $toolPages -}}
+    {{- $slug := .File.ContentBaseName -}}
+    {{- $tm := index $meta $slug -}}
+    {{- if $tm -}}
+        {{- $catId := $tm.category -}}
+        {{- $list := slice -}}
+        {{- if index $grouped $catId }}{{ $list = index $grouped $catId }}{{ end -}}
+        {{- $grouped = merge $grouped (dict $catId (append (dict "page" . "meta" $tm) $list)) -}}
+    {{- end -}}
+{{- end -}}
+
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">{{ .Description }}</div>
+    {{- end }}
+</header>
+
+{{- $content := .Content }}
+{{- if $content }}
+<div class="post-content">{{ $content }}</div>
+{{- end }}
+
+<div class="tools-index">
+    {{- range $i, $cat := $cats -}}
+        {{- $list := slice -}}
+        {{- if index $grouped $cat.id }}{{ $list = index $grouped $cat.id }}{{ end -}}
+        {{- if $list -}}
+        <section id="cat-{{ $cat.id }}" class="home-cat">
+            <div class="sec-head">
+                <span class="cat-ico" style="--cat-color: {{ $cat.color }}">{{ partial "icon.html" $cat.icon }}</span>
+                <h2>{{ i18n (printf "cat_%s_name" $cat.id) }}</h2>
+                <span class="cat-count">{{ len $list }} {{ i18n "tool_count" }}</span>
+                <a class="view-all" href="{{ site.Home.RelPermalink }}#cat-{{ $cat.id }}">{{ i18n "view_all" }} →</a>
+            </div>
+            <p class="sec-sub">{{ i18n (printf "cat_%s_desc" $cat.id) }}</p>
+            <div class="card-grid">
+                {{- range $list -}}
+                    {{- partial "home-tool-card.html" (dict "page" .page "meta" .meta "cat" $cat) -}}
+                {{- end -}}
+            </div>
+        </section>
+        {{- end -}}
+    {{- end -}}
+</div>
+{{- end -}}

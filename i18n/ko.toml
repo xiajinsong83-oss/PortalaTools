@@ -1,0 +1,125 @@
+nav_all_tools = "모든 도구"
+
+nav_home = "홈"
+
+hero_eyebrow = "무료 온라인 도구 · {Count}개"
+
+hero_part1 = "무료 온라인 도구, "
+
+hero_accent = "모든 브라우저에서 로컬 실행"
+
+search_placeholder = "무엇을 찾으시나요? 예: JSON, Base64, QR…"
+
+search_button = "검색"
+
+trust_free = "완전 무료"
+
+trust_signup = "회원가입 불필요"
+
+trust_open = "바로 사용"
+
+trust_upload = "데이터 업로드 없음"
+
+popular_label = "인기"
+
+tool_count = "도구"
+
+howto_title = "사용 방법"
+
+howto_step1 = "위 도구에 콘텐츠를 붙여넣거나 끌어다 놓으세요."
+
+howto_step2 = "실행을 클릭하면 결과가 즉시 표시됩니다."
+
+howto_step3 = "결과를 복사하세요. 모든 처리는 브라우저에서 로컬로 실행됩니다."
+
+faq_title = "자주 묻는 질문"
+
+faq_q1 = "이 도구가 내 데이터를 서버로 업로드하나요?"
+
+faq_a1 = "아니요. 모든 처리는 브라우저에서 로컬로 이루어집니다. 업로드, 저장, 공유되지 않습니다."
+
+faq_q2 = "무료인가요? 회원가입이 필요한가요?"
+
+faq_a2 = "네, 완전 무료이며 회원가입도 필요 없고 사용 제한도 없습니다."
+
+faq_q3 = "모바일에서도 되나요?"
+
+faq_a3 = "네. 모든 최신 브라우저(데스크톱, 태블릿, 모바일)에서 작동합니다."
+
+related_title = "관련 도구"
+
+footer_privacy = "개인정보처리방침"
+
+footer_terms = "이용약관"
+
+footer_dmca = "DMCA"
+
+footer_about = "회사 소개"
+
+footer_contact = "문의하기"
+
+footer_stats_title = "사이트 통계"
+
+stat_tools = "도구"
+
+stat_cats = "카테고리"
+
+stat_local = "100% 로컬"
+
+ad_label = "광고"
+
+privacy_note = "모든 처리는 브라우저에서 로컬로 이루어지며 서버로 전송되지 않습니다."
+
+site_tagline = "무료 온라인 도구 — 브라우저에서 로컬 실행"
+
+cat_files_name = "파일"
+
+cat_files_desc = ""
+
+cat_text_name = "텍스트"
+
+cat_text_desc = ""
+
+cat_random_name = "랜덤"
+
+cat_random_desc = ""
+
+cat_time_name = "시간"
+
+cat_time_desc = ""
+
+cat_dev_name = "개발"
+
+cat_dev_desc = ""
+
+cat_device_name = "기기"
+
+cat_device_desc = ""
+
+cat_study_name = "학습"
+
+cat_study_desc = ""
+
+cat_health_name = "건강"
+
+cat_health_desc = ""
+
+cat_office_name = "오피스"
+
+cat_office_desc = ""
+
+cat_fun_name = "엔터테인먼트"
+
+cat_fun_desc = ""
+
+cat_social_name = "소셜미디어"
+
+cat_social_desc = ""
+
+cat_secure_name = "보안"
+
+cat_secure_desc = ""
+
+cat_query_name = "생활"
+
+cat_query_desc = ""

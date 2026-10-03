@@ -1,0 +1,39 @@
+{{- /* Category listing page — /tools/c/<cat>/ */ -}}
+{{ define "main" }}
+{{- $cat := .Params.cat }}
+{{- $catInfo := dict }}
+{{- range site.Data.categories.cat }}{{- if eq .id $cat }}{{- $catInfo = . }}{{- end }}{{- end }}
+{{- $tools := slice }}
+{{- range site.Data.catalog.cats }}{{- if eq .id $cat }}{{- $tools = .tools }}{{- end }}{{- end }}
+
+<main class="main home-main" id="top">
+  <div class="home-layout">
+    {{- partial "sidebar.html" . }}
+    <div class="home-content">
+      <div class="cat-header">
+        <div class="cat-header-left">
+          <span class="cat-dot" style="background: {{ $catInfo.color }}"></span>
+          <h1 class="cat-title">{{ i18n (printf "cat_%s_name" $cat) }}</h1>
+          <span class="cat-count-badge">{{ len $tools }} {{ i18n "tool_count" }}</span>
+        </div>
+      </div>
+      <p class="cat-desc">{{ i18n (printf "cat_%s_desc" $cat) }}</p>
+
+      <div class="tool-grid">
+        {{- range $tools }}
+        <a class="tool-card" href="{{ printf "tools/%s/" .slug | relLangURL }}">
+          <div class="tool-card-icon" style="background: {{ .color }}15; color: {{ .color }}">
+            {{ partial "icon.html" (dict "name" "tool") }}
+          </div>
+          <div class="tool-card-body">
+            <h3 class="tool-card-name">{{ if eq $.Site.Language.Lang "zh" }}{{ .name_zh }}{{ else }}{{ .name_en }}{{ end }}</h3>
+            <span class="tool-card-cat" style="color: {{ .color }}">{{ i18n (printf "cat_%s_name" .cat) }}</span>
+            <p class="tool-card-desc">{{ if eq $.Site.Language.Lang "zh" }}{{ .desc_zh }}{{ else }}{{ .desc_en }}{{ end }}</p>
+          </div>
+        </a>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</main>
+{{ end }}

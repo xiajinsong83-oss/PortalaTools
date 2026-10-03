@@ -1,0 +1,32 @@
+{{- /* Related tools — show other tools in the same category */ -}}
+{{- $cur := .Params.slug | default .File.TranslationBaseName }}
+{{- $catTools := slice }}
+{{- range site.Data.catalog.cats }}
+  {{- $match := false }}
+  {{- range .tools }}
+    {{- if eq .slug $cur }}{{- $match = true }}{{- end }}
+  {{- end }}
+  {{- if $match }}{{- $catTools = .tools }}{{- end }}
+{{- end }}
+{{- if $catTools }}
+<section class="related-tools">
+  <h2>{{ i18n "related_title" }}</h2>
+  <div class="tool-grid">
+    {{- $shown := 0 }}
+    {{- range $catTools }}
+      {{- if and (ne .slug $cur) (lt $shown 6) }}
+        <a class="tool-card" href="{{ printf "tools/%s/" .slug | relLangURL }}">
+          <div class="tool-card-icon" style="background: {{ .color }}15; color: {{ .color }}">
+            {{ partial "icon.html" (dict "name" "tool") }}
+          </div>
+          <div class="tool-card-body">
+            <h3 class="tool-card-name">{{ if eq $.Site.Language.Lang "zh" }}{{ .name_zh }}{{ else }}{{ .name_en }}{{ end }}</h3>
+            <p class="tool-card-desc">{{ if eq $.Site.Language.Lang "zh" }}{{ .desc_zh }}{{ else }}{{ .desc_en }}{{ end }}</p>
+          </div>
+        </a>
+        {{- $shown = add $shown 1 }}
+      {{- end }}
+    {{- end }}
+  </div>
+</section>
+{{- end }}

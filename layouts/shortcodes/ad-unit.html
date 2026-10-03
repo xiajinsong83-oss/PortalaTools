@@ -1,0 +1,2 @@
+{{- /* Ad unit shortcode → delegates to the shared partial. */ -}}
+{{ partial "ad-unit.html" (dict "label" (i18n "ad_label") "slot" (.Get 0 | default "")) }}

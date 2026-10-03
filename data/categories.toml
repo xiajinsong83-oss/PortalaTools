@@ -1,0 +1,94 @@
+# ============================================================
+# 13 categories with descriptions (deertools-style)
+# ============================================================
+
+[[cat]]
+  id = "files"
+  icon = "folder"
+  color = "#f0653a"
+  desc_en = "ZIP/RAR/7z extract, Excel/CSV/JSON convert, encoding hash, QR code"
+  desc_zh = "解压压缩、Excel/CSV/JSON 互转、编码哈希、二维码"
+
+[[cat]]
+  id = "text"
+  icon = "type"
+  color = "#7048e8"
+  desc_en = "Case convert, word count, sort, remove duplicates, format text"
+  desc_zh = "大小写转换、字数统计、排序、去重、文本格式化"
+
+[[cat]]
+  id = "random"
+  icon = "dices"
+  color = "#e8590c"
+  desc_en = "Dice, coin flip, picker, wheel, random name picker"
+  desc_zh = "骰子、抛硬币、随机选择、转盘、随机点名"
+
+[[cat]]
+  id = "time"
+  icon = "clock"
+  color = "#1c7ed6"
+  desc_en = "Timestamp, countdown, stopwatch, world clock, pomodoro"
+  desc_zh = "时间戳、倒计时、秒表、世界时钟、番茄钟"
+
+[[cat]]
+  id = "dev"
+  icon = "code"
+  color = "#0ca678"
+  desc_en = "JSON formatter, Base64, Regex, JWT, hash, URL encode"
+  desc_zh = "JSON 格式化、Base64、正则、JWT、哈希、URL 编码"
+
+[[cat]]
+  id = "device"
+  icon = "monitor"
+  color = "#3b5bdb"
+  desc_en = "Screen test, camera, mic, gamepad, touch, speed test"
+  desc_zh = "屏幕检测、摄像头、麦克风、手柄、触屏、网速"
+
+[[cat]]
+  id = "study"
+  icon = "book"
+  color = "#f59f00"
+  desc_en = "Typing test, Schulte grid, brain training, alphabet, calculator"
+  desc_zh = "打字练习、舒尔特方格、脑力训练、字母表、计算器"
+
+[[cat]]
+  id = "health"
+  icon = "heart"
+  color = "#37b24d"
+  desc_en = "BMI, body fat, water reminder, breath, vision test"
+  desc_zh = "BMI、体脂率、喝水提醒、呼吸、视力测试"
+
+[[cat]]
+  id = "office"
+  icon = "briefcase"
+  color = "#0c8599"
+  desc_en = "Excel to CSV, CSV viewer, markdown, note, todo"
+  desc_zh = "Excel 转 CSV、CSV 查看、Markdown、笔记、待办"
+
+[[cat]]
+  id = "fun"
+  icon = "party"
+  color = "#d6336c"
+  desc_en = "LED wall, fortune teller, nickname generator, meme, spinning"
+  desc_zh = "LED 弹幕、占卜、网名生成、表情包、转盘"
+
+[[cat]]
+  id = "social"
+  icon = "at"
+  color = "#ae3ec9"
+  desc_en = "QR code, social media analyzer, hashtag, screenshot"
+  desc_zh = "二维码、社交媒体分析、话题标签、截图"
+
+[[cat]]
+  id = "secure"
+  icon = "lock"
+  color = "#495057"
+  desc_en = "Password generator, MD5/SHA hash, encryption, ciphers"
+  desc_zh = "密码生成、MD5/SHA 哈希、加密、加解密"
+
+[[cat]]
+  id = "query"
+  icon = "compass"
+  color = "#e67700"
+  desc_en = "Phone area code, IP lookup, time zone, reference data"
+  desc_zh = "手机区号、IP 查询、时区、参考数据"

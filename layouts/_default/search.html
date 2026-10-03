@@ -1,0 +1,44 @@
+{{ define "main" }}
+<header class="page-header">
+    <h1>Search Tools</h1>
+    <div class="post-description">Type to search all {{ len (where site.RegularPages "Section" "tools") }}+ online tools.</div>
+</header>
+
+<div id="searchbox">
+    <input id="searchInput" autofocus placeholder="Search tools… try json, base64, password, qr…"
+        aria-label="search" type="search" autocomplete="off" maxlength="64">
+    <ul id="searchResults" aria-label="search results"></ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+<script>
+(function () {
+  var input = document.getElementById('searchInput');
+  var results = document.getElementById('searchResults');
+  var fuse = null;
+
+  fetch('{{ "index.json" | relURL }}')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      fuse = new Fuse(data, {
+        keys: ['title', 'content', 'summary'],
+        threshold: 0.3,
+        ignoreLocation: true
+      });
+      var params = new URLSearchParams(window.location.search);
+      var q = params.get('q');
+      if (q) { input.value = q; doSearch(q); }
+    });
+
+  function doSearch(q) {
+    if (!fuse) return;
+    if (!q.trim()) { results.innerHTML = ''; return; }
+    var res = fuse.search(q).slice(0, 30);
+    results.innerHTML = res.map(function(r){
+      return '<li><a href="' + r.item.permalink + '"><strong>' + r.item.title + '</strong></a></li>';
+    }).join('') || '<li style="color:#64748b;padding:12px">No results for "' + q + '"</li>';
+  }
+  input.addEventListener('input', function(){ doSearch(this.value); });
+})();
+</script>
+{{ end }}

@@ -1,0 +1,125 @@
+nav_all_tools = "Alle Tools"
+
+nav_home = "Start"
+
+hero_eyebrow = "Kostenlose Web-Tools · {Count} verfügbar"
+
+hero_part1 = "Kostenlose Web-Tools, "
+
+hero_accent = "alles lokal im Browser"
+
+search_placeholder = "Wonach suchst du? Z.B.: JSON, Base64, QR…"
+
+search_button = "Suchen"
+
+trust_free = "100% kostenlos"
+
+trust_signup = "Keine Anmeldung"
+
+trust_open = "Sofort nutzbar"
+
+trust_upload = "Kein Upload"
+
+popular_label = "Beliebt"
+
+tool_count = "Tools"
+
+howto_title = "So nutzen Sie dieses Tool"
+
+howto_step1 = "Öffnen Sie das Tool oben und fügen Sie Ihren Inhalt ein."
+
+howto_step2 = "Klicken Sie auf Ausführen — das Ergebnis erscheint sofort."
+
+howto_step3 = "Kopieren Sie das Ergebnis. Alles läuft lokal im Browser."
+
+faq_title = "Häufige Fragen"
+
+faq_q1 = "Lädt dieses Tool meine Daten auf einen Server hoch?"
+
+faq_a1 = "Nein. Die Verarbeitung erfolgt lokal in Ihrem Browser. Es wird nichts hochgeladen, gespeichert oder geteilt."
+
+faq_q2 = "Ist es kostenlos? Muss ich mich anmelden?"
+
+faq_a2 = "Ja, völlig kostenlos, ohne Anmeldung, ohne Limits."
+
+faq_q3 = "Funktioniert es auf dem Handy?"
+
+faq_a3 = "Ja. Funktioniert in jedem modernen Browser: Desktop, Tablet und Handy."
+
+related_title = "Ähnliche Tools"
+
+footer_privacy = "Datenschutz"
+
+footer_terms = "AGB"
+
+footer_dmca = "DMCA"
+
+footer_about = "Über"
+
+footer_contact = "Kontakt"
+
+footer_stats_title = "Statistiken"
+
+stat_tools = "Tools"
+
+stat_cats = "Kategorien"
+
+stat_local = "100% lokal"
+
+ad_label = "Werbung"
+
+privacy_note = "Alles läuft lokal im Browser. Keine Daten werden an den Server gesendet."
+
+site_tagline = "Kostenlose Web-Tools — lokal im Browser ausgeführt"
+
+cat_files_name = "Dateien"
+
+cat_files_desc = ""
+
+cat_text_name = "Text"
+
+cat_text_desc = ""
+
+cat_random_name = "Zufall"
+
+cat_random_desc = ""
+
+cat_time_name = "Zeit"
+
+cat_time_desc = ""
+
+cat_dev_name = "Entwicklung"
+
+cat_dev_desc = ""
+
+cat_device_name = "Geräte"
+
+cat_device_desc = ""
+
+cat_study_name = "Lernen"
+
+cat_study_desc = ""
+
+cat_health_name = "Gesundheit"
+
+cat_health_desc = ""
+
+cat_office_name = "Büro"
+
+cat_office_desc = ""
+
+cat_fun_name = "Spaß"
+
+cat_fun_desc = ""
+
+cat_social_name = "Soziale Medien"
+
+cat_social_desc = ""
+
+cat_secure_name = "Sicherheit"
+
+cat_secure_desc = ""
+
+cat_query_name = "Alltag"
+
+cat_query_desc = ""

@@ -1,0 +1,214 @@
+# ============================================================
+# Tool metadata: slug -> category / icon / hot
+# category ids must exist in data/categories.toml
+# icon names must exist in layouts/partials/icon.html
+# hot = shown in the "Popular Tools" row on the homepage
+# ============================================================
+
+["json-formatter"]
+  category = "developer"
+  icon = "braces"
+  hot = true
+
+["json-minifier"]
+  category = "developer"
+  icon = "minimize"
+
+["json-string-escape"]
+  category = "developer"
+  icon = "quote"
+
+["base64-encoder"]
+  category = "developer"
+  icon = "binary"
+  hot = true
+
+["url-encoder"]
+  category = "developer"
+  icon = "link"
+
+["html-entity-encoder"]
+  category = "developer"
+  icon = "code"
+
+["regex-tester"]
+  category = "developer"
+  icon = "search"
+  hot = true
+
+["jwt-decoder"]
+  category = "developer"
+  icon = "key"
+
+["xml-formatter"]
+  category = "developer"
+  icon = "file-code"
+
+["cron-parser"]
+  category = "developer"
+  icon = "clock"
+
+["slug-generator"]
+  category = "developer"
+  icon = "anchor"
+
+["svg-previewer"]
+  category = "developer"
+  icon = "image"
+
+["word-counter"]
+  category = "text"
+  icon = "align-left"
+  hot = true
+
+["case-converter"]
+  category = "text"
+  icon = "type"
+
+["text-diff"]
+  category = "text"
+  icon = "file-diff"
+
+["text-line-sorter"]
+  category = "text"
+  icon = "arrow-up-down"
+
+["remove-duplicate-lines"]
+  category = "text"
+  icon = "list-filter"
+
+["whitespace-remover"]
+  category = "text"
+  icon = "minus"
+
+["line-counter"]
+  category = "text"
+  icon = "hash"
+
+["lorem-ipsum-generator"]
+  category = "text"
+  icon = "file-text"
+
+["markdown-previewer"]
+  category = "text"
+  icon = "book-open"
+
+["morse-code-translator"]
+  category = "text"
+  icon = "radio"
+
+["md5-hash-generator"]
+  category = "hash"
+  icon = "fingerprint"
+
+["sha256-hash-generator"]
+  category = "hash"
+  icon = "shield"
+
+["sha512-hash-generator"]
+  category = "hash"
+  icon = "shield"
+
+["random-password-generator"]
+  category = "hash"
+  icon = "key"
+  hot = true
+
+["hex-to-rgb-converter"]
+  category = "color"
+  icon = "palette"
+
+["color-contrast-checker"]
+  category = "color"
+  icon = "eye"
+
+["binary-converter"]
+  category = "convert"
+  icon = "binary"
+
+["data-size-converter"]
+  category = "convert"
+  icon = "hard-drive"
+
+["length-converter"]
+  category = "convert"
+  icon = "ruler"
+
+["temperature-converter"]
+  category = "convert"
+  icon = "thermometer"
+
+["speed-converter"]
+  category = "convert"
+  icon = "gauge"
+
+["weight-converter"]
+  category = "convert"
+  icon = "scale"
+
+["roman-numeral-converter"]
+  category = "convert"
+  icon = "history"
+
+["csv-to-json"]
+  category = "data"
+  icon = "table"
+
+["json-to-csv"]
+  category = "data"
+  icon = "table"
+
+["csv-viewer"]
+  category = "data"
+  icon = "columns"
+
+["percentage-calculator"]
+  category = "calc"
+  icon = "percent"
+
+["age-calculator"]
+  category = "calc"
+  icon = "calendar"
+
+["bmi-calculator"]
+  category = "calc"
+  icon = "activity"
+
+["discount-calculator"]
+  category = "calc"
+  icon = "tag"
+
+["tip-calculator"]
+  category = "calc"
+  icon = "receipt"
+
+["loan-calculator"]
+  category = "calc"
+  icon = "banknote"
+
+["timestamp-converter"]
+  category = "time"
+  icon = "clock"
+  hot = true
+
+["date-difference-calculator"]
+  category = "time"
+  icon = "calendar-range"
+
+["timer-stopwatch"]
+  category = "time"
+  icon = "timer"
+
+["uuid-generator"]
+  category = "generate"
+  icon = "hash"
+  hot = true
+
+["qr-code-generator"]
+  category = "generate"
+  icon = "qr-code"
+  hot = true
+
+["random-number-generator"]
+  category = "generate"
+  icon = "dices"

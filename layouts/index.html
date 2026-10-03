@@ -1,0 +1,99 @@
+{{- /* ============================================================
+   Homepage — deertools.cn clone layout
+   gradient hero box → popular pill bar →
+   sticky left category sidebar + 3-col tool card grid
+============================================================ */ -}}
+{{- define "main" -}}
+{{- $cats := site.Data.categories.cat -}}
+{{- $data := site.Data.catalog -}}
+{{- $toolCount := $data.total -}}
+{{- $isZh := eq site.Language.Lang "zh" -}}
+
+{{- $popular := slice
+    (dict "slug" "wheel" "zh" "幸运大转盘" "en" "Wheel Picker")
+    (dict "slug" "extract-zip" "zh" "在线解压 zip" "en" "Unzip Online")
+    (dict "slug" "qr-code-generator" "zh" "二维码生成/识别" "en" "QR Code")
+    (dict "slug" "json-formatter" "zh" "JSON 格式化/校验" "en" "JSON Formatter")
+    (dict "slug" "excel-to-csv" "zh" "Excel 转 CSV" "en" "Excel to CSV")
+    (dict "slug" "checksum-verify" "zh" "文件 MD5/SHA 校验" "en" "Checksum Verify")
+-}}
+
+<main class="home-main">
+
+    {{- /* ---------- Gradient hero box ---------- */ -}}
+    <section class="hero-box">
+        <span class="hero-circle hero-circle-1"></span>
+        <span class="hero-circle hero-circle-2"></span>
+        <span class="hero-circle hero-circle-3"></span>
+        <span class="eyebrow">{{ i18n "hero_eyebrow" (dict "Count" $toolCount) }}</span>
+        <h1 class="hero-title">
+            {{- i18n "hero_part1" -}}<span class="accent">{{ i18n "hero_accent" }}</span>
+        </h1>
+        <form class="search-box" action="{{ "search/" | relLangURL }}" method="get" role="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path>
+            </svg>
+            <input type="search" name="q" placeholder="{{ i18n "search_placeholder" }}" aria-label="Search tools" autocomplete="off">
+            <button class="search-btn" type="submit">{{ i18n "search_button" }}</button>
+        </form>
+        <div class="trust-row">
+            <span>{{ partial "icon.html" "check" }} {{ i18n "trust_free" }}</span>
+            <span>{{ partial "icon.html" "check" }} {{ i18n "trust_signup" }}</span>
+            <span>{{ partial "icon.html" "check" }} {{ i18n "trust_open" }}</span>
+            <span>{{ partial "icon.html" "check" }} {{ i18n "trust_upload" }}</span>
+        </div>
+    </section>
+
+    {{- /* ---------- Popular pill bar ---------- */ -}}
+    <div class="hot-bar">
+        <span class="hot-label">{{ i18n "popular_label" }}</span>
+        {{- range $popular -}}
+        <a class="hot-pill" href="{{ printf "/tools/%s/" .slug | relLangURL }}">{{ if $isZh }}{{ .zh }}{{ else }}{{ .en }}{{ end }}</a>
+        {{- end -}}
+    </div>
+
+    {{- /* ---------- Sidebar + content layout ---------- */ -}}
+    <div class="home-layout">
+        <aside class="side-cats" aria-label="Categories">
+            {{- range $data.cats -}}
+            {{- $c := index (where $cats "id" .id) 0 -}}
+            <a href="#cat-{{ .id }}" style="--cat-color: {{ $c.color }}">
+                <span class="cat-dot"></span>
+                <span class="side-cat-name">{{ i18n (printf "cat_%s_name" .id) }}</span>
+            </a>
+            {{- end -}}
+        </aside>
+
+        <div class="home-content">
+            {{- range $data.cats -}}
+                {{- $cid := .id -}}
+                {{- $cat := index (where $cats "id" $cid) 0 -}}
+                <section id="cat-{{ $cid }}" class="home-cat">
+                    <div class="sec-head">
+                        <span class="cat-ico" style="--cat-color: {{ $cat.color }}">{{ partial "icon.html" $cat.icon }}</span>
+                        <h2>{{ i18n (printf "cat_%s_name" $cid) }}</h2>
+                        <span class="cat-desc">{{ if $isZh }}{{ $cat.desc_zh }}{{ else }}{{ $cat.desc_en }}{{ end }}</span>
+                        <a class="view-all" href="{{ printf "/tools/c/%s/" $cid | relLangURL }}" style="color: {{ $cat.color }}">View all {{ len .tools }} →</a>
+                    </div>
+                    <div class="card-grid">
+                        {{- range first 6 .tools -}}
+                        <a class="tool-card" href="{{ printf "/tools/%s/" .slug | relLangURL }}" style="--cat-color: {{ .color }}">
+                            <span class="card-head">
+                                <span class="icon-chip" style="background: {{ .color }}1f;color: {{ .color }}">
+                                    {{- if .svg }}{{ .svg | safeHTML }}{{ else }}{{ partial "icon.html" "tool" }}{{- end -}}
+                                </span>
+                                <span class="head-text">
+                                    <span class="card-name">{{ if $isZh }}{{ .name_zh }}{{ else }}{{ .name_en }}{{ end }}</span>
+                                    <span class="cat-tag" style="color: {{ .color }}">{{ i18n (printf "cat_%s_name" $cid) }}</span>
+                                </span>
+                            </span>
+                            <span class="desc">{{ if $isZh }}{{ .desc_zh }}{{ else }}{{ .desc_en }}{{ end }}</span>
+                        </a>
+                        {{- end -}}
+                    </div>
+                </section>
+            {{- end -}}
+        </div>
+    </div>
+</main>
+{{- end -}}

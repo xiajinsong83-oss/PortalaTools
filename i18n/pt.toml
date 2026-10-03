@@ -1,0 +1,125 @@
+nav_all_tools = "Todas as ferramentas"
+
+nav_home = "Início"
+
+hero_eyebrow = "Ferramentas online grátis · {Count} disponíveis"
+
+hero_part1 = "Ferramentas online grátis, "
+
+hero_accent = "tudo local no seu navegador"
+
+search_placeholder = "O que procura? Tente: JSON, Base64, QR…"
+
+search_button = "Buscar"
+
+trust_free = "100% grátis"
+
+trust_signup = "Sem cadastro"
+
+trust_open = "Pronto para usar"
+
+trust_upload = "Sem envio de dados"
+
+popular_label = "Populares"
+
+tool_count = "ferramentas"
+
+howto_title = "Como usar esta ferramenta"
+
+howto_step1 = "Abra a ferramenta acima e cole ou arraste seu conteúdo."
+
+howto_step2 = "Clique em Executar — o resultado aparece na hora."
+
+howto_step3 = "Copie o resultado. Tudo roda localmente no seu navegador."
+
+faq_title = "Perguntas frequentes"
+
+faq_q1 = "Esta ferramenta envia meus dados para um servidor?"
+
+faq_a1 = "Não. Todo o processamento acontece localmente no seu navegador. Nada é enviado, armazenado ou compartilhado."
+
+faq_q2 = "É grátis? Preciso me cadastrar?"
+
+faq_a2 = "Sim, totalmente grátis, sem cadastro e sem limites."
+
+faq_q3 = "Funciona no celular?"
+
+faq_a3 = "Sim. Funciona em qualquer navegador moderno: desktop, tablet e celular."
+
+related_title = "Ferramentas relacionadas"
+
+footer_privacy = "Privacidade"
+
+footer_terms = "Termos"
+
+footer_dmca = "DMCA"
+
+footer_about = "Sobre"
+
+footer_contact = "Contato"
+
+footer_stats_title = "Estatísticas"
+
+stat_tools = "ferramentas"
+
+stat_cats = "categorias"
+
+stat_local = "100% local"
+
+ad_label = "Publicidade"
+
+privacy_note = "Todo o processamento é local no seu navegador. Nenhum dado enviado ao servidor."
+
+site_tagline = "Ferramentas online grátis — executadas localmente no navegador"
+
+cat_files_name = "Arquivos"
+
+cat_files_desc = ""
+
+cat_text_name = "Texto"
+
+cat_text_desc = ""
+
+cat_random_name = "Aleatório"
+
+cat_random_desc = ""
+
+cat_time_name = "Tempo"
+
+cat_time_desc = ""
+
+cat_dev_name = "Desenvolvimento"
+
+cat_dev_desc = ""
+
+cat_device_name = "Dispositivos"
+
+cat_device_desc = ""
+
+cat_study_name = "Estudo"
+
+cat_study_desc = ""
+
+cat_health_name = "Saúde"
+
+cat_health_desc = ""
+
+cat_office_name = "Escritório"
+
+cat_office_desc = ""
+
+cat_fun_name = "Diversão"
+
+cat_fun_desc = ""
+
+cat_social_name = "Social"
+
+cat_social_desc = ""
+
+cat_secure_name = "Segurança"
+
+cat_secure_desc = ""
+
+cat_query_name = "Consulta"
+
+cat_query_desc = ""

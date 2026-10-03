@@ -1,0 +1,51 @@
+{{- /* Single tool page — rich layout like deertools */ -}}
+{{ define "main" }}
+<main class="main" id="top">
+  <article class="post-single">
+    <header class="post-header">
+      <div class="breadcrumbs">
+        <a href="{{ "" | relLangURL }}">{{ i18n "nav_home" | default "Home" }}</a>
+        &nbsp;»&nbsp;
+        <a href="{{ "tools/" | relLangURL }}">{{ i18n "nav_all_tools" }}</a>
+        &nbsp;»&nbsp;
+        <span class="bread-cur">{{ .Title }}</span>
+      </div>
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{- with .Description }}<div class="post-description">{{ . }}</div>{{- end }}
+    </header>
+
+    <div class="post-content">
+      {{ .Content }}
+
+      {{- /* How to use section */ -}}
+      <div class="howto">
+        <h2>{{ i18n "howto_title" }}</h2>
+        <ol class="howto-steps">
+          <li>{{ i18n "howto_step1" }}</li>
+          <li>{{ i18n "howto_step2" }}</li>
+          <li>{{ i18n "howto_step3" }}</li>
+        </ol>
+      </div>
+
+      {{- /* FAQ section */ -}}
+      <div class="faq">
+        <h2>{{ i18n "faq_title" }}</h2>
+        <details class="faq-item">
+          <summary>{{ i18n "faq_q1" }}</summary>
+          <p>{{ i18n "faq_a1" }}</p>
+        </details>
+        <details class="faq-item">
+          <summary>{{ i18n "faq_q2" }}</summary>
+          <p>{{ i18n "faq_a2" }}</p>
+        </details>
+        <details class="faq-item">
+          <summary>{{ i18n "faq_q3" }}</summary>
+          <p>{{ i18n "faq_a3" }}</p>
+        </details>
+      </div>
+
+      {{- partial "related-tools.html" . }}
+    </div>
+  </article>
+</main>
+{{ end }}
