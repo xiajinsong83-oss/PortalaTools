@@ -1,9 +1,0 @@
-{{- /* Category sidebar — links to /tools/c/<id>/ */ -}}
-<aside class="side-cats" aria-label="Categories">
-  {{- range site.Data.categories.cat }}
-  <a href="{{ printf "tools/c/%s/" .id | relLangURL }}" style="--cat-color: {{ .color }}">
-    <span class="cat-dot"></span>
-    <span class="side-cat-name">{{ i18n (printf "cat_%s_name" .id) }}</span>
-  </a>
-  {{- end }}
-</aside>
