@@ -1,0 +1,182 @@
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+
+  <section class="home-planner">
+    <p class="section-eyebrow">Farm Tool</p>
+    <h1>Farm Layout Planner</h1>
+    <p class="quick-sub">Sketch your farm layout right here — 12×8 grid, auto-saved in your browser. Use the grid as a quick planning board. It is a layout sketch, so you can change ideas without committing to a full in-game build.</p>
+    <div class="planner-hero-row">
+      <div class="planner-hero-img-wrap"><img src="/images/farm-planner-hero.webp" alt="Farm layout reference" class="planner-hero-img"></div>
+      <div class="planner-hero-text">
+        <p class="planner-eyebrow">VISUAL REFERENCE</p>
+        <h3>Make the rough idea visible.</h3>
+        <p>Use the farm view as a reminder: a good layout is a set of relationships — rows need access, buildings need breathing room, and empty plots are part of the plan.</p>
+      </div>
+    </div>
+    <div class="planner-wrap home-planner-wrap">
+      <aside class="planner-tools">
+        <h3>BUILD PALETTE</h3>
+        <p class="planner-sub">Choose a tile <span class="planner-badge">7 TOOLS</span></p>
+        <div class="planner-active-tool">
+          <div class="active-tool-box"><span class="active-tool-icon" id="activeToolIcon"></span><div><small>ACTIVE TOOL</small><strong id="activeToolName">Soil</strong></div></div>
+        </div>
+        <div class="planner-tools-grid">
+          <button class="tool-btn active" data-tool="soil"><span class="tool-icon soil"></span>Soil</button>
+          <button class="tool-btn" data-tool="crop"><span class="tool-icon crop"></span>Crop</button>
+          <button class="tool-btn" data-tool="building"><span class="tool-icon building"></span>Building</button>
+          <button class="tool-btn" data-tool="tree"><span class="tool-icon tree"></span>Tree</button>
+          <button class="tool-btn" data-tool="path"><span class="tool-icon path"></span>Path</button>
+          <button class="tool-btn" data-tool="water"><span class="tool-icon water"></span>Water</button>
+          <button class="tool-btn tool-erase" data-tool="erase"><span class="tool-icon erase"></span>Erase</button>
+        </div>
+        <div class="planner-planname">
+          <label>Plan name</label>
+          <input type="text" id="planName" value="Year 1 layout">
+        </div>
+        <button class="planner-save" id="saveBtn">Save draft</button>
+        <button class="planner-clear" id="clearBtn">Clear board</button>
+        <p class="planner-save-status" id="saveStatus">No local save yet.</p>
+      </aside>
+      <main class="planner-board">
+        <div class="planner-board-head">
+          <div><span class="planner-badge">12 × 8</span><h2 id="boardTitle">Year 1 layout</h2></div>
+          <div class="planner-head-right">
+            <span class="planner-counter"><strong id="filledCount">0</strong> / 96 filled</span>
+            <button class="planner-export" id="exportBtn">↓ Export JSON</button>
+          </div>
+        </div>
+        <div class="planner-hint">
+          <span class="dot"></span> <strong id="toolLabel">Soil</strong> ACTIVE — Click a plot to place
+        </div>
+        <p class="planner-grid-label">FARM MAP <span>12 COLUMNS · 8 ROWS</span></p>
+        <div class="planner-grid" id="gridBoard"></div>
+        <div class="planner-board-footer">
+          <span>⌨ Placement mode · <kbd>Arrow keys</kbd> move focus</span>
+          <span>◎ Sketch only</span>
+        </div>
+      </main>
+      <aside class="planner-summary">
+        <h3>BOARD SUMMARY</h3>
+        <p class="planner-sub">Farm footprint</p>
+        <div class="planner-stat-row"><span>Available space</span><strong id="statFilled2">0</strong></div>
+        <div class="planner-stat-bar"><div class="planner-stat-fill" id="statFillBar" style="width:0%"></div></div>
+        <div class="planner-stat-num"><span>0</span><span>96 plots</span></div>
+        <hr>
+        <div class="planner-stat-row"><span><span class="tool-icon soil"></span> Soil</span><strong id="statSoil">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon crop"></span> Crops</span><strong id="statCrop">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon building"></span> Buildings</span><strong id="statBuilding">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon tree"></span> Trees</span><strong id="statTree">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon path"></span> Paths</span><strong id="statPath">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon water"></span> Nature + water</span><strong id="statWater">0</strong></div>
+        <div class="planner-note">
+          <strong>💡 Planning note</strong>
+          <p>Confirm exact footprints and collision rules in-game before building.</p>
+        </div>
+      </aside>
+    </div>
+    <div class="planner-info-row">
+      <div class="planner-info-box">
+        <h4>Why a grid first?</h4>
+        <p>A layout sketch is the fastest way to turn a vague farm idea into a visible constraint. It gives you a place to compare a crop block, a path, a building footprint, and a little breathing room before you spend in-game resources.</p>
+      </div>
+      <div class="planner-info-box">
+        <h4>What it saves</h4>
+        <p>The MVP saves the plan name and tile map in your browser. Exporting JSON gives you a small portable backup without requiring an account or sending a farm file to a server.</p>
+      </div>
+    </div>
+  </section>
+
+<script>
+(function(){
+  var ROWS = 8, COLS = 12;
+  var board = document.getElementById('gridBoard');
+  if (!board) return;
+  var cells = [];
+  var currentTool = 'soil';
+  var saved = JSON.parse(localStorage.getItem('svfarm') || '{}');
+
+  for (var r = 0; r < ROWS; r++) {
+    for (var c = 0; c < COLS; c++) {
+      var cell = document.createElement('div');
+      cell.className = 'grid-cell';
+      cell.dataset.idx = r * COLS + c;
+      board.appendChild(cell);
+      cells.push(cell);
+    }
+  }
+
+  function render() {
+    var counts = {soil:0, crop:0, building:0, tree:0, path:0, water:0};
+    var filled = 0;
+    cells.forEach(function(cell){
+      var idx = cell.dataset.idx;
+      var t = saved[idx] || '';
+      cell.className = 'grid-cell' + (t ? ' ' + t : '');
+      cell.innerHTML = t ? '' : '+';
+      if (t) { counts[t]++; filled++; }
+    });
+    document.getElementById('filledCount').textContent = filled;
+    document.getElementById('statFilled2').textContent = filled;
+    document.getElementById('statFillBar').style.width = (filled/96*100) + '%';
+    document.getElementById('statSoil').textContent = counts.soil;
+    document.getElementById('statCrop').textContent = counts.crop;
+    document.getElementById('statBuilding').textContent = counts.building;
+    document.getElementById('statTree').textContent = counts.tree;
+    document.getElementById('statPath').textContent = counts.path;
+    document.getElementById('statWater').textContent = counts.water;
+  }
+
+  cells.forEach(function(cell){
+    cell.addEventListener('click', function(){
+      var idx = cell.dataset.idx;
+      if (currentTool === 'erase') delete saved[idx];
+      else saved[idx] = currentTool;
+      localStorage.setItem('svfarm', JSON.stringify(saved));
+      render();
+    });
+  });
+
+  document.querySelectorAll('.home-planner .tool-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.home-planner .tool-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentTool = btn.dataset.tool;
+      document.getElementById('toolLabel').textContent = btn.textContent.trim();
+      document.getElementById('activeToolName').textContent = btn.textContent.trim();
+      var icon = btn.querySelector('.tool-icon');
+      if (icon) document.getElementById('activeToolIcon').className = 'active-tool-icon ' + btn.dataset.tool;
+    });
+  });
+
+  document.getElementById('clearBtn').addEventListener('click', function(){
+    saved = {}; localStorage.removeItem('svfarm'); render();
+    document.getElementById('saveStatus').textContent = 'Board cleared.';
+  });
+
+  document.getElementById('saveBtn').addEventListener('click', function(){
+    localStorage.setItem('svfarm', JSON.stringify(saved));
+    var d = new Date();
+    var hh = String(d.getHours()).padStart(2,'0');
+    var mm = String(d.getMinutes()).padStart(2,'0');
+    document.getElementById('saveStatus').textContent = 'Draft saved ' + (d.getMonth()+1) + '/' + d.getDate() + ' ' + hh + ':' + mm;
+  });
+
+  document.getElementById('planName').addEventListener('input', function(){
+    document.getElementById('boardTitle').textContent = this.value;
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', function(){
+    var data = { plan: document.getElementById('planName').value, rows: 8, cols: 12, tiles: saved };
+    var blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'farm-layout.json';
+    a.click();
+  });
+
+  render();
+})();
+</script>
+</div>
+{{ end }}
