@@ -1,0 +1,33 @@
+{{- /* ============================================================
+   Custom sitemap.xml — quality-focused for portalaser.cn
+   - Real lastmod from front matter (falls back to date)
+   - changefreq + priority tuned for a tool directory
+   - xhtml hreflang alternates for EN ↔ ZH
+   - Excludes the empty /search/ page
+============================================================ */ -}}
+{{- $today := now.Format "2006-01-02" -}}
+{{ printf `<?xml version="1.0" encoding="utf-8" standalone="yes"?>` | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{{- range .Data.Pages -}}
+{{- $p := . -}}
+{{- $lastmod := $p.Lastmod | default $p.Date | default (time $today) -}}
+{{- $prio := 0.6 -}}
+{{- $freq := "monthly" -}}
+{{- if .IsHome }}{{ $prio = 1.0 }}{{ $freq = "weekly" }}
+{{- else if .IsSection }}{{ $prio = 0.8 }}{{ $freq = "weekly" }}
+{{- else if (eq .Section "tools") }}{{ $prio = 0.7 }}{{ $freq = "monthly" }}
+{{- end -}}
+{{- if ne .Layout "search" -}}
+<url>
+  <loc>{{ .Permalink }}</loc>
+  <lastmod>{{ $lastmod.Format "2006-01-02" }}</lastmod>
+  <changefreq>{{ $freq }}</changefreq>
+  <priority>{{ printf "%.1f" $prio }}</priority>
+  {{- range .AllTranslations -}}
+  <xhtml:link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}"/>
+  {{- end -}}
+  <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.Home.Permalink }}"/>
+</url>
+{{- end -}}
+{{- end -}}
+</urlset>
