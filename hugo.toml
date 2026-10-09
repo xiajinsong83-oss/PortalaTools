@@ -47,7 +47,7 @@ disableKinds = ["taxonomy", "term"]
 
   # Google AdSense publisher ID, e.g. "ca-pub-1234567890123456".
   # Leave empty to render lightweight ad placeholders instead of real ad units.
-  googleAdsenseClient = ""
+  googleAdsenseClient = "ca-pub-3866829862674413"
 
   # Optional Google Analytics 4 — uncomment and fill when you have a property:
   # [params.analytics.google]
