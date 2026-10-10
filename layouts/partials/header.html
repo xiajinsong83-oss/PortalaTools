@@ -1,0 +1,125 @@
+{{- /* ============================================================
+   Custom site header (overrides PaperMod's header.html)
+   Layout: logo left · category links right · lang + theme toggle
+   No version string anywhere → nothing to overflow.
+============================================================ */ -}}
+
+{{- /* theme init — keep in sync with PaperMod (defaultTheme = light) */ -}}
+{{- if (not site.Params.disableThemeToggle) }}
+{{- if (eq site.Params.defaultTheme "light") }}
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+</script>
+{{- else if (eq site.Params.defaultTheme "dark") }}
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+</script>
+{{- else }}
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+{{- end }}
+{{- end }}
+
+<header class="site-header">
+    <div class="header-inner">
+        <div class="logo">
+            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ site.Title }} (Alt + H)">
+                <img src="{{ "favicon.svg" | relURL }}" alt="" aria-label="logo" width="24" height="24" class="logo-icon">
+                <span class="logo-text">{{ site.Title }}</span>
+            </a>
+            <span class="logo-tagline">{{ i18n "site_tagline" }}</span>
+        </div>
+
+        {{- /* Category names on the right — scrollable, never overflows */ -}}
+        <nav class="header-nav" aria-label="{{ i18n "nav_all_tools" }}">
+            <a href="{{ "tools/" | relLangURL }}">{{ i18n "nav_all_tools" }}</a>
+            {{- range site.Data.categories.cat }}
+            <a href="{{ site.Home.RelPermalink }}#cat-{{ .id }}">{{ i18n (printf "cat_%s_name" .id) }}</a>
+            {{- end }}
+        </nav>
+
+        <div class="header-actions">
+            {{- $lang := .Lang }}
+            {{- with site.Home.Translations }}
+            <ul class="lang-switch">
+                {{- range . -}}
+                {{- if ne $lang .Lang }}
+                <li>
+                    <a href="{{- .Permalink -}}" title="{{ .Language.Label | default (.Lang | title) }}"
+                        aria-label="{{ .Language.Label | default (.Lang | title) }}">
+                        {{- .Language.Label | default (.Lang | title) -}}
+                    </a>
+                </li>
+                {{- end -}}
+                {{- end}}
+            </ul>
+            {{- end }}
+
+            {{- if (not site.Params.disableThemeToggle) }}
+            <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle dark mode">
+                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+            </button>
+            {{- end }}
+
+            <button id="nav-toggle" class="nav-toggle" aria-label="{{ i18n "nav_open_menu" }}" aria-expanded="false">
+                <svg id="nav-open" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+                <svg id="nav-close" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    {{- /* Mobile dropdown menu */ -}}
+    <div id="mobile-menu" class="mobile-menu" hidden>
+        <a href="{{ "tools/" | relLangURL }}">{{ i18n "nav_all_tools" }}</a>
+        {{- range site.Data.categories.cat }}
+        <a href="{{ site.Home.RelPermalink }}#cat-{{ .id }}">{{ i18n (printf "cat_%s_name" .id) }}</a>
+        {{- end }}
+        {{- $lang := .Lang }}
+        {{- with site.Home.Translations }}
+            {{- range . -}}
+            {{- if ne $lang .Lang }}
+            <a class="mobile-lang" href="{{- .Permalink -}}">{{- .Language.Label | default (.Lang | title) -}}</a>
+            {{- end -}}
+            {{- end}}
+        {{- end }}
+    </div>
+</header>
